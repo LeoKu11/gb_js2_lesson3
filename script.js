@@ -54,7 +54,18 @@ class GoodsList {
   }
 }
 
+class BasketGoods{
+    items=[];
+    fetchGoods=(callback=()=>{}){
+        service(GET_BASKET_GOODS_ITEMS, (data)=>{
+             this.items=data;
+             callback();
+        {);
 
+
+}
+const basketGoods=new BasketGoods();
+basketGoods.fetchGoods();
 
 const goodsList = new GoodsList();
 goodsList.fetchGoods(() => {
