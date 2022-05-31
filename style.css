@@ -43,5 +43,5 @@ button {
     outline: 1px solid black;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
