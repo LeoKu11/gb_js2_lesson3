@@ -9,11 +9,14 @@ const GET_GOODS_ITEMS = 'https://raw.githubusercontent.com/GeekBrainsTutorial/on
 const GET_BASKET_GOODS_ITEMS = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/getBasket.json'
 
 function service(url, callback) {
-  xhr = new XMLHttpRequest();
-  xhr.open('GET', url);
-  xhr.send();
-  xhr.onload = () => {
-    callback(JSON.parse(xhr.response))
+  return new Promise((resolve)=>{
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+    xhr.onload = () => {
+    if(xhr.readyState===4){
+        callback(JSON.parse(xhr.response))
+    }
   }
 }
 
