@@ -13,21 +13,21 @@
          <h1 class="title">eShop</h1>
          <div class="search">
             <input type="text" class="goods-search" v-model="search"/>
-            <custom-button v-on:click="filterItems">искать</custom-button>
+            <button class="search-button" type="button" v-on:click="filterItems">Искать</button>
          </div>
          <div class="actions">
-            <custom-button v-on:click="setVisionCard">Корзина</custom-button>
+            <button class="cart-button" type="button">Корзина</button>
          </div>
       </header>
       <main>
          <div class="goods-list">
-            <goods-item v-for="item in filteredItems" v-bind:item="item" ></goods-item>
+            <div class="goods-item" v-for="item in filteredItems">
+               <h3>{{ item.product_name }}</h3>
+               <p>{{ item.price }}</p>
+            </div>
          </div>
       </main>
-      <basket-goods v-if="cardIsVision" v-on:closeclick="setVisionCard"></basket-goods>
-
-
-
+      <div>{{ calculatePrice }}</div>
    </div>
 </body>
 </html>
