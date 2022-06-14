@@ -8,6 +8,23 @@ function service(url) {
 }
 
 function init() {
+  const CustomButton = Vue.component('custom-button', {
+    template: `
+      <button class="search-button" type="button" v-on:click="$emit('click')">
+         <slot></slot>
+      </button>
+    `
+  })
+  const basketGoods = Vue.component('basket-goods', {
+    data() {
+      return {
+         basketGoodsItems: []
+      }
+    },
+  })
+  
+
+  
   const app = new Vue({
     el: '#root',
     data: {
