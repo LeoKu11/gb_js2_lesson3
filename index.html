@@ -21,13 +21,13 @@
       </header>
       <main>
          <div class="goods-list">
-            <div class="goods-item" v-for="item in filteredItems">
-               <h3>{{ item.product_name }}</h3>
-               <p>{{ item.price }}</p>
-            </div>
+            <goods-item v-for="item in filteredItems" v-bind:item="item" ></goods-item>
          </div>
       </main>
-      <div>{{ calculatePrice }}</div>
+      <basket-goods v-if="cardIsVision" v-on:closeclick="setVisionCard"></basket-goods>
+
+
+<!--      <div>{{ calculatePrice }}</div>-->
    </div>
 </body>
 </html>
