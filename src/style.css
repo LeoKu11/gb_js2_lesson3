@@ -31,7 +31,7 @@ header {
     padding: 10px;
 }
 
-button {
+.custom-button {
     padding: 10px
 }
 
@@ -47,13 +47,9 @@ button {
     padding: 10px;
     box-sizing: border-box;
     outline: 1px solid black;
-    display: grid;
-    grid-template-rows:min-content auto min-content;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-}
-.goods-item > *{
-    display:flex;
-    justify-content: center;
 }
 
 .goods-search {
@@ -99,4 +95,20 @@ button {
 
 .basket-card__content {
     padding: 10px;
+}
+
+.basket-item {
+    padding: 10px;
+    display: flex;
+    gap: 30px
+}
+.basket-item__title {
+    font-weight: bold;
+}
+.basket-item__total {
+    margin-left: 100px;
+}
+
+.basket-item__count button {
+    padding: 0 5px
 }
